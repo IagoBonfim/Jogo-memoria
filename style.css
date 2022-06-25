@@ -22,6 +22,7 @@ body{
     transform-style: preserve-3d;
     transition: 0.3s;
     position: relative;
+    backface-visibility: hidden;
 }
 .memory-card:active{
     transform: scale(0.97);

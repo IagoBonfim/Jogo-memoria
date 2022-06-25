@@ -19,7 +19,7 @@ img.forEach(img =>{
 cardBord.innerHTML += cardHTML + cardHTML
 
 //fim renderização do HTML//
-
+const cards = document.querySelectorAll('.memory-card')
 let firstCard, secondCard
 let lockCard = false
 function flipCard(){
@@ -44,19 +44,19 @@ function disableCards(){
     resetCards()
     },1000)
 }
-/*(function shuflle(){
+(function shuflle(){
     cards.forEach(card =>{
         let rand = Math.floor(Math.random() * 12);
         card.style.order = rand;
     });
-})()*/
+})()
 function resetCards(isMatch = false){
     if(isMatch){
-        firstCard.removeEventListener('click', firstCard)
-        firstCard.removeEventListener('click', secondCard)
+        firstCard.removeEventListener('click', flipCard)
+        secondCard.removeEventListener('click', flipCard)
     }
     [firstCard, secondCard, lockCard] = [null, null, false]
 }
-const cards = document.querySelectorAll('.memory-card')
+
 cards.forEach(card => card.addEventListener('click', flipCard))
 
